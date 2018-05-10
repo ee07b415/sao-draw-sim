@@ -2,13 +2,14 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ee07b415.github.io",
+  "homepage": "https://ee07b415.github.io/sao-draw-sim",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",
     "gh-pages": "^1.1.0",
-    "extract-text-webpack-plugin": "^2.1.2"
+    "extract-text-webpack-plugin": "^2.1.2",
+    "react-sound": "^1.2.0"
   },
   "devDependencies": {
     "webpack": "^2.2.0",

@@ -53,18 +53,43 @@ ol, ul {
   display: inline-block;
 }
 
+.table {
+  display: table;
+}
+
+.center {
+  position: relative;
+  top:250px;
+  margin: auto;
+}
+
+.center-horizontal {
+  position: relative;
+  margin: auto;
+}
+
+.draw-box {
+  width: 465px;
+  height: 450px;
+}
+
+.char-icon {
+  width: 116px;
+  height: 146px;
+}
+
 .single-draw {
   background-image: url("./resource/single_draw.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 300px;
-  height: 150px;
+  background-size: cover;
+  width: 340px;
+  height: 170px;
 }
 
 .eleven-draw {
   background-image: url("./resource/eleven_draw.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 300px;
-  height: 150px;
+  background-size: cover;
+  width: 340px;
+  height: 170px;
 }
