@@ -1,31 +1,58 @@
 import React from 'react';
 import '../index.css';
-import childfes_asuana from '../resource/childfes_asuna.png';
-import childfes_yuki from '../resource/childfes_yuki.png';
-import africa_kirito from '../resource/africa_kirito.png';
-import africa_clay from '../resource/africa_clay.png'
+import {
+    const_pool,
+    diamond_pool,
+} from './pool'
 
 class DrawBoard extends React.Component {
     state = {
 
     };
 
+    getTwoStarPool = () => {
+        return const_pool.twoStar.char.map(name => {
+            return (<img className='char-icon' src={const_pool.twoStar.dir(name, true)} alt={name} />)
+        });
+    };
+    // getThreeStarPool = () => {
+    //     return const_pool.threeStar.char.map(name => <img src={const_pool.twoStar.dir(name, true)} alt={name} />);
+    // };
+    // getFourStarPool = () => {
+    //     return const_pool.fourStar.char.map(name => <img src={const_pool.twoStar.dir(name, true)} alt={name} />);
+    // };
+
+
+    getPool = (pool) => {
+        return diamond_pool[pool].char.map( name => {
+            return (<img className='char-icon' src={diamond_pool[pool].dir(name, true)} alt={name} />)
+        });
+    };
+
+    handleCharGen = (character, currentPool, up) => {
+        let rate = up? 12:6;
+
+        if(character<=rate){
+            let random = Math.floor(Math.random()* this.getPool(currentPool).length);
+            return(this.getPool(currentPool)[random]);
+        }else{
+            let rand = Math.floor(Math.random()* this.getTwoStarPool().length);
+            return(this.getTwoStarPool()[rand]);
+        }
+    };
+
     render() {
 
         const {
+            currentPool,
             charList,
             up
         } = this.props;
 
-        const rate = up? 12:6;
-
         let drawResult = charList.map(character => {
             return (
                 <div className = { charList.length === 1 ? "table center-horizontal":"inline center-horizontal"}>
-                    {character<= rate && character%2===1 && <img src={childfes_yuki} alt="yuki" className="char-icon" />}
-                    {character<= rate && character%2===0 && <img src={childfes_asuana} alt="asuna" className="char-icon" />}
-                    {character> rate && character%2===1 && <img src={africa_kirito} alt="kirito"  className="char-icon"/>}
-                    {character> rate && character%2===0 && <img src={africa_clay} alt="clay"  className="char-icon"/>}
+                    {this.handleCharGen(character, currentPool, up)}
                 </div>
             )
         });
