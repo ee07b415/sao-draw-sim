@@ -1,4 +1,8 @@
 export const diamond_pool = {
+    watergun:{
+        dir:require.context('../resource/watergun/', true),
+        char:['./llenn.png', './pitohui.png', './fukaziroh.png']
+    },
     childfes:{
         dir:require.context('../resource/childfes/', true),
         char:['./asuna.png', './yuuki.png']
@@ -6,7 +10,7 @@ export const diamond_pool = {
     trap:{
         dir:require.context('../resource/trap/', true),
         char:['./asuna.png', './kirito.png', './sinon.png', './leafa.png']
-    }
+    },
 };
 
 export const const_pool = {

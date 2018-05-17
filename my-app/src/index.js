@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import DrawBoard from './component/DrawBoard';
 import {diamond_pool} from './component/pool';
-import bgm from './bgm.mp3';
+import bgm from './lottery_get.ogg';
 import argo from './resource/argo.png';
 import {CSSTransitionGroup} from 'react-transition-group';
 

@@ -3,43 +3,6 @@ body {
   margin: 20px;
 }
 
-ol, ul {
-  padding-left: 30px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
-
 .game {
   display: flex;
   flex-direction: row;
@@ -124,4 +87,63 @@ ol, ul {
 .whole-screen {
   width: 680px;
   height: 975px;
+}
+
+.icon-char{
+  position:absolute;
+  left:23px;
+  bottom:-451px;
+  z-index: -1;
+}
+
+.icon-frame{
+  position: absolute;
+  left: 14px;
+  bottom: -472px;
+  z-index: 0;
+}
+
+.icon-star-block{
+  position: absolute;
+  left: 35px;
+  bottom: -418px;
+  transform: scale(0.7);
+  width: 215px;
+}
+
+.icon-new-icon{
+  transform: scale(0.5);
+  position: absolute;
+  left: 12px;
+  bottom: -284px;
+}
+
+
+.icon-lv-label{
+  transform: scale(1.7);
+  position: absolute;
+  left: 58px;
+  bottom: -453px;
+}
+
+.icon-bgi{
+  z-index: -2;
+  transform: scale(1.4,1.4);
+  position: absolute;
+  left: 54PX;
+  bottom: -427px;
+}
+
+.icon-attribute{
+  position: absolute;
+  bottom: -480px;
+  left: 153px;
+  transform: scale(0.7);
+}
+
+.icon-weapon{
+  position: absolute;
+  left: 165px;
+  bottom: -467px;
+  transform: scale(0.7);
 }
