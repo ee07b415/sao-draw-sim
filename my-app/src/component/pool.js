@@ -24,7 +24,7 @@ export const const_pool = {
     },
     fourStar:{
         dir:require.context('../resource/fourStar/', true),
-        char:['./kirito.png', './clay.png', './asuna.png', './leafa.png', './silica.png', './sinon.png', './liz.png']
+        char:['./silica.png', './sinon.png', './leafa.png', './yuuki.png', './rain.png']
     },
 
 };

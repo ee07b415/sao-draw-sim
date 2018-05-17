@@ -14,7 +14,7 @@ class Game extends React.Component {
             dropdownOpen: false,
             charList: [],
             up: false,
-            currentPool:'childfes',
+            currentPool:'watergun',
             appear: false,
         };
     }

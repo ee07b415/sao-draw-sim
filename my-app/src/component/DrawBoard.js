@@ -16,11 +16,11 @@ class DrawBoard extends React.Component {
         });
     };
     // getThreeStarPool = () => {
-    //     return const_pool.threeStar.char.map(name => <img src={const_pool.twoStar.dir(name, true)} alt={name} />);
+    //     return const_pool.threeStar.char.map(name => <img className='char-icon' src={const_pool.twoStar.dir(name, true)} alt={name} />);
     // };
-    // getFourStarPool = () => {
-    //     return const_pool.fourStar.char.map(name => <img src={const_pool.twoStar.dir(name, true)} alt={name} />);
-    // };
+    getFourStarPool = () => {
+        return const_pool.fourStar.char.map(name => <img className='char-icon' src={const_pool.fourStar.dir(name, true)} alt={name} />);
+    };
 
 
     getPool = (pool) => {
@@ -35,6 +35,9 @@ class DrawBoard extends React.Component {
         if(character<=rate){
             let random = Math.floor(Math.random()* this.getPool(currentPool).length);
             return(this.getPool(currentPool)[random]);
+        }else if (character>rate && character<=rate+8){
+            let rand = Math.floor(Math.random()* this.getFourStarPool().length);
+            return(this.getFourStarPool()[rand]);
         }else{
             let rand = Math.floor(Math.random()* this.getTwoStarPool().length);
             return(this.getTwoStarPool()[rand]);
