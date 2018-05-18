@@ -32,7 +32,7 @@ class CharIcon extends React.Component {
                 </div>
                 <img className="icon-new-icon" src={new_icon} alt='new_icon' />
                 <img className="icon-lv-label" src={lv_label} alt='lv_label' />
-
+                <div className="icon-lv-text">LV&nbsp;&nbsp;&nbsp;1</div>
                 <img className="icon-attribute" src={fire} alt='fire' />
                 <img className="icon-weapon" src={sword} alt='sword' />
             </div>

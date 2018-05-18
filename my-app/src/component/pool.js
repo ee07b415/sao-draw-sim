@@ -1,3 +1,6 @@
+// const weapon =['Bow', 'Dagger', 'DualBlades', 'Gun', 'Lance', 'Mace', 'Rapier', 'Rifle', 'Rod', 'Shield', 'Sword'];
+// const attribute =['dark', 'earth', 'fire', 'light', 'unattributed', 'water', 'wind'];
+
 export const diamond_pool = {
     watergun:{
         dir:require.context('../resource/watergun/', true),

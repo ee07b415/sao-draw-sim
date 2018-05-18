@@ -12,6 +12,12 @@ body {
   margin-left: 20px;
 }
 
+.lottery-bgi{
+  background-image: url("./resource/test_resource/lottery_bgi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .inline {
   display: inline-block;
 }
@@ -92,21 +98,19 @@ body {
 .icon-char{
   position:absolute;
   left:23px;
-  bottom:-451px;
+  bottom:-258px;
   z-index: -1;
 }
 
 .icon-frame{
   position: absolute;
-  left: 14px;
-  bottom: -472px;
   z-index: 0;
 }
 
 .icon-star-block{
   position: absolute;
   left: 35px;
-  bottom: -418px;
+  bottom: -218px;
   transform: scale(0.7);
   width: 215px;
 }
@@ -115,15 +119,23 @@ body {
   transform: scale(0.5);
   position: absolute;
   left: 12px;
-  bottom: -284px;
+  bottom: -84px;
 }
-
 
 .icon-lv-label{
   transform: scale(1.7);
   position: absolute;
-  left: 58px;
-  bottom: -453px;
+  left: 65px;
+  bottom: -253px;
+}
+
+.icon-lv-text{
+  position: absolute;
+  bottom: -263px;
+  left: 71px;
+  color: #fffcef;
+  font-size: 2em;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .icon-bgi{
@@ -131,19 +143,37 @@ body {
   transform: scale(1.4,1.4);
   position: absolute;
   left: 54PX;
-  bottom: -427px;
+  bottom: -227px;
 }
 
 .icon-attribute{
   position: absolute;
-  bottom: -480px;
-  left: 153px;
+  bottom: -280px;
+  left: 160px;
   transform: scale(0.7);
 }
 
 .icon-weapon{
   position: absolute;
-  left: 165px;
-  bottom: -467px;
+  left: 172px;
+  bottom: -267px;
   transform: scale(0.7);
+}
+
+#singleDrawBtn{
+  float: left;
+}
+
+#singleDrawBtn:active {
+  position: absolute;
+  bottom: 80px;
+}
+
+#elevenDrawBtn{
+  float: right;
+}
+
+#elevenDrawBtn:active {
+  position: absolute;
+  bottom: 80px;
 }

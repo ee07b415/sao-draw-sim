@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import DrawBoard from './component/DrawBoard';
 import {diamond_pool} from './component/pool';
-import bgm from './lottery_get.ogg';
-import argo from './resource/argo.png';
-import {CSSTransitionGroup} from 'react-transition-group';
+import bgm from './lottery_get.mp3';
+import single_draw from './resource/test_resource/single_draw.png';
+import eleven_draw from './resource/test_resource/eleven_draw.png';
 
 class Game extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class Game extends React.Component {
         randList.sort(function (a, b) {
             return a - b
         });
-        this.setState({appear:false}, () => this.setState({charList: randList}));
+        this.setState({charList: randList});
     };
 
     handleUp = () => {
@@ -54,53 +54,67 @@ class Game extends React.Component {
 
         return (
             <div>
+                <div className="whole-screen lottery-bgi">
+                    <div style={{width: "680px"}}>
+                        <div style={{
+                            width: "680px",
+                            height: "760px",
+                            backgroundImage: `url(${this.handleBackground(this.state.currentPool)})`
+                        }}>
+                            {this.state.charList.length !== 0 &&
+                            <DrawBoard
+                                currentPool={this.state.currentPool}
+                                charList={this.state.charList}
+                                up={this.state.up}
+                            />
+                            }
+                        </div>
+                        {/*{   this.state.appear &&*/}
+                        {/*<CSSTransitionGroup*/}
+                        {/*style={{position: 'absolute', top: '0px'}}*/}
+                        {/*transitionName="example"*/}
+                        {/*transitionAppear={true}*/}
+                        {/*>*/}
+                        {/*<img className={'whole-screen'} src={argo} alt={'argo'} onClick={() => this.handleDraw(11)}/>*/}
+                        {/*</CSSTransitionGroup>*/}
+                        {/*}*/}
+                        <div>
+                            <div>
+                                <img
+                                    style={{width:'340px'}}
+                                    id="singleDrawBtn"
+                                    src={single_draw}
+                                    alt={'1'}
+                                    onClick={() => this.handleDraw(1)}/>
+                            </div>
+                            <div>
+                                <img
+                                    style={{width:'340px'}}
+                                    id="elevenDrawBtn"
+                                    src={eleven_draw}
+                                    alt={'11'}
+                                    onClick={() => this.handleDraw(11)}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <select value={this.state.currentPool} onChange={this.handlePoolChange}>
                     {createPoolList}
                 </select>
-                <div style={{width: "680px"}}>
-                    <div style={{
-                        width: "680px",
-                        height: "760px",
-                        backgroundImage: `url(${this.handleBackground(this.state.currentPool)})`
-                    }}>
-                        {this.state.charList.length !== 0 &&
-                        <DrawBoard
-                            currentPool={this.state.currentPool}
-                            charList={this.state.charList}
-                            up={this.state.up}
-                        />
-                        }
-                    </div>
-                    {   this.state.appear &&
-                    <CSSTransitionGroup
-                        style={{position: 'absolute', top: '0px'}}
-                        transitionName="example"
-                        transitionAppear={true}
-                        >
-                        <img className={'whole-screen'} src={argo} alt={'argo'} onClick={() => this.handleDraw(11)}/>
-                    </CSSTransitionGroup>
-                    }
-                    <div>
-                        <div>
-                            <button className="single-draw" onClick={() => this.handleDraw(1)}></button>
-                            <button className="eleven-draw" onClick={() => this.handleShow()}></button>
-                        </div>
-                        <div>
-                            <label>
-                                UP:
-                                <input
-                                    name="up"
-                                    type="checkbox"
-                                    checked={this.state.up}
-                                    onChange={() => this.handleUp()}/>
-                            </label>
-                        </div>
-                    </div>
-                    <audio controls>
-                        <source src={bgm} type="audio/mpeg"/>
-                        Your browser does not support the audio element.
-                    </audio>
+                <div className='inline'>
+                    <label>
+                        UP:
+                        <input
+                            name="up"
+                            type="checkbox"
+                            checked={this.state.up}
+                            onChange={() => this.handleUp()}/>
+                    </label>
                 </div>
+                <br/>
+                <audio controls autoPlay loop>
+                    <source src={bgm} type="audio/mpeg" />
+                </audio>
             </div>
         );
     }
