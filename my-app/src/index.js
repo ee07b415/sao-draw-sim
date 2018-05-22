@@ -14,7 +14,8 @@ class Game extends React.Component {
             dropdownOpen: false,
             charList: [],
             up: false,
-            currentPool:'watergun',
+            guarantee:false,
+            currentPool:'fifthanv',
             appear: false,
         };
     }
@@ -24,8 +25,8 @@ class Game extends React.Component {
     };
 
     handleDraw = (draws) => {
-        let randList = [];
-        for (let i = 0; i < draws; i++) {
+        let randList = this.state.guarantee? [0]:[];
+        for (let i = 0; i < draws - this.state.guarantee? 1:0; i++) {
             randList.push(Math.floor(Math.random() * 200));
         }
         randList.sort(function (a, b) {
@@ -36,6 +37,11 @@ class Game extends React.Component {
 
     handleUp = () => {
         this.setState({up: !this.state.up});
+        this.setState({charList: []})
+    };
+
+    handleGuarantee = () => {
+        this.setState({guarantee: !this.state.guarantee});
         this.setState({charList: []})
     };
 
@@ -58,7 +64,9 @@ class Game extends React.Component {
                     <div style={{
                         width: "680px",
                         height: "760px",
-                        backgroundImage: `url(${this.handleBackground(this.state.currentPool)})`
+                        backgroundImage: `url(${this.handleBackground(this.state.currentPool)})`,
+                        backgroundRepeat:"no-repeat",
+                        backgroundSize:"680px 760px"
                     }}>
                         {this.state.charList.length !== 0 &&
                         <DrawBoard
@@ -103,6 +111,16 @@ class Game extends React.Component {
                             type="checkbox"
                             checked={this.state.up}
                             onChange={() => this.handleUp()}/>
+                    </label>
+                </div>
+                <div className='inline'>
+                    <label>
+                        Guarantee:
+                        <input
+                            name="guarantee"
+                            type="checkbox"
+                            checked={this.state.guarantee}
+                            onChange={() => this.handleGuarantee()}/>
                     </label>
                 </div>
                 <br/>

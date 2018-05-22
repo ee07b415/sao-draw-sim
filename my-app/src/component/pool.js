@@ -2,16 +2,24 @@
 // const attribute =['dark', 'earth', 'fire', 'light', 'unattributed', 'water', 'wind'];
 
 export const diamond_pool = {
+    fifthanv:{
+        dir:require.context('../resource/fifthanv/', true),
+        rate:6,
+        char:['./asuna.png', './kirito.png', './philia.png', './premie.png', './rain.png', './seven.png', './strea.png']
+    },
     watergun:{
         dir:require.context('../resource/watergun/', true),
+        rate:6,
         char:['./llenn.png', './pitohui.png', './fukaziroh.png']
     },
     childfes:{
         dir:require.context('../resource/childfes/', true),
+        rate:6,
         char:['./asuna.png', './yuuki.png']
     },
     trap:{
         dir:require.context('../resource/trap/', true),
+        rate:6,
         char:['./asuna.png', './kirito.png', './sinon.png', './leafa.png']
     },
 };

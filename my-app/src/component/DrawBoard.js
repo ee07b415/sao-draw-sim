@@ -31,7 +31,7 @@ class DrawBoard extends React.Component {
     };
 
     handleCharGen = (character, currentPool, up) => {
-        let rate = up? 12:6;
+        let rate = up? 2 * diamond_pool[currentPool].rate:diamond_pool[currentPool].rate;
 
         if(character<=rate){
             let random = Math.floor(Math.random()* this.getPool(currentPool).length);
@@ -50,7 +50,7 @@ class DrawBoard extends React.Component {
         const {
             currentPool,
             charList,
-            up
+            up,
         } = this.props;
 
         let drawResult = charList.map(character => {
