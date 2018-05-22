@@ -1,3 +1,4 @@
+import CharIcon from './char_icon'
 // const weapon =['Bow', 'Dagger', 'DualBlades', 'Gun', 'Lance', 'Mace', 'Rapier', 'Rifle', 'Rod', 'Shield', 'Sword'];
 // const attribute =['dark', 'earth', 'fire', 'light', 'unattributed', 'water', 'wind'];
 

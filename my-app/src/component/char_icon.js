@@ -30,7 +30,7 @@ class CharIcon extends React.Component {
         return (
             <div>
                 <img className="icon-frame" src={frame} alt='frame' />
-                <img className="icon-char" src={alice} alt='alice' />
+                <img className="icon-char" src={alice} alt='char' />
                 <img className="icon-bgi" src={char_bgi} alt='char_bgi' />
                 <div className="icon-star-block">
                     <img className="star" src={star} alt='star' key="star_1"/>
@@ -51,8 +51,8 @@ class CharIcon extends React.Component {
                 <img className="icon-new-icon" src={new_icon} alt='new_icon' />
                 <img className="icon-lv-label" src={lv_label} alt='lv_label' />
                 <div className="icon-lv-text">LV&nbsp;&nbsp;&nbsp;1</div>
-                <img className="icon-attribute" src={fire} alt='fire' />
-                <img className="icon-weapon" src={sword} alt='sword' />
+                <img className="icon-attribute" src={fire} alt='attr' />
+                <img className="icon-weapon" src={sword} alt='weapon' />
             </div>
         );
     }
