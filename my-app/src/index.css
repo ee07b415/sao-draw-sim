@@ -160,20 +160,29 @@ body {
   transform: scale(0.7);
 }
 
+.button-row{
+  width:680px;
+  height:171px;
+}
+
 #singleDrawBtn{
+  width:340px;
+  height:171px;
   float: left;
 }
 
 #singleDrawBtn:active {
-  position: absolute;
-  bottom: 80px;
+  position: relative;
+  top: 2px;
 }
 
 #elevenDrawBtn{
+  width:340px;
+  height:171px;
   float: right;
 }
 
 #elevenDrawBtn:active {
-  position: absolute;
-  bottom: 80px;
+  position: relative;
+  top: 2px;
 }

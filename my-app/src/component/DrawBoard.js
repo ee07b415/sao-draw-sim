@@ -1,5 +1,6 @@
 import React from 'react';
 import '../index.css';
+// import CharIcon from './char_icon';
 import {
     const_pool,
     diamond_pool,

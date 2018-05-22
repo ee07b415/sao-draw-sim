@@ -15,8 +15,17 @@ class CharIcon extends React.Component {
     render() {
 
         // const {
-        //
+        //     char
         // } = this.props;
+
+        // const char={
+        //     pool:'test_resource',
+        //     char:'alice',
+        //     attribute:'fire',
+        //     weapon:'sword',
+        // };
+
+        const starNo = 4;
 
         return (
             <div>
@@ -26,9 +35,18 @@ class CharIcon extends React.Component {
                 <div className="icon-star-block">
                     <img className="star" src={star} alt='star' key="star_1"/>
                     <img className="star" src={star} alt='star' key="star_2"/>
-                    <img className="star" src={star} alt='star' key="star_3"/>
-                    <img className="star" src={star} alt='star' key="star_4"/>
-                    <img className="star" src={star} alt='star' key="star_5"/>
+                    {
+                        starNo>=3 &&
+                        <img className="star" src={star} alt='star' key="star_3"/>
+                    }
+                    {
+                        starNo>=4 &&
+                        <img className="star" src={star} alt='star' key="star_4"/>
+                    }
+                    {
+                        starNo>=5 &&
+                        <img className="star" src={star} alt='star' key="star_5"/>
+                    }
                 </div>
                 <img className="icon-new-icon" src={new_icon} alt='new_icon' />
                 <img className="icon-lv-label" src={lv_label} alt='lv_label' />

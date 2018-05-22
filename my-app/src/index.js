@@ -55,20 +55,32 @@ class Game extends React.Component {
         return (
             <div>
                 <div className="whole-screen lottery-bgi">
-                    <div style={{width: "680px"}}>
-                        <div style={{
-                            width: "680px",
-                            height: "760px",
-                            backgroundImage: `url(${this.handleBackground(this.state.currentPool)})`
-                        }}>
-                            {this.state.charList.length !== 0 &&
-                            <DrawBoard
-                                currentPool={this.state.currentPool}
-                                charList={this.state.charList}
-                                up={this.state.up}
-                            />
-                            }
-                        </div>
+                    <div style={{
+                        width: "680px",
+                        height: "760px",
+                        backgroundImage: `url(${this.handleBackground(this.state.currentPool)})`
+                    }}>
+                        {this.state.charList.length !== 0 &&
+                        <DrawBoard
+                            currentPool={this.state.currentPool}
+                            charList={this.state.charList}
+                            up={this.state.up}
+                        />
+                        }
+                    </div>
+                    <div className="button-row">
+                        <img
+                            id="singleDrawBtn"
+                            src={single_draw}
+                            alt={'1'}
+                            onClick={() => this.handleDraw(1)}/>
+                        <img
+                            id="elevenDrawBtn"
+                            src={eleven_draw}
+                            alt={'11'}
+                            onClick={() => this.handleDraw(11)}/>
+                    </div>
+                    {/*<div style={{width: "680px"}}>*/}
                         {/*{   this.state.appear &&*/}
                         {/*<CSSTransitionGroup*/}
                         {/*style={{position: 'absolute', top: '0px'}}*/}
@@ -78,25 +90,7 @@ class Game extends React.Component {
                         {/*<img className={'whole-screen'} src={argo} alt={'argo'} onClick={() => this.handleDraw(11)}/>*/}
                         {/*</CSSTransitionGroup>*/}
                         {/*}*/}
-                        <div>
-                            <div>
-                                <img
-                                    style={{width:'340px'}}
-                                    id="singleDrawBtn"
-                                    src={single_draw}
-                                    alt={'1'}
-                                    onClick={() => this.handleDraw(1)}/>
-                            </div>
-                            <div>
-                                <img
-                                    style={{width:'340px'}}
-                                    id="elevenDrawBtn"
-                                    src={eleven_draw}
-                                    alt={'11'}
-                                    onClick={() => this.handleDraw(11)}/>
-                            </div>
-                        </div>
-                    </div>
+                    {/*</div>*/}
                 </div>
                 <select value={this.state.currentPool} onChange={this.handlePoolChange}>
                     {createPoolList}
@@ -112,7 +106,7 @@ class Game extends React.Component {
                     </label>
                 </div>
                 <br/>
-                <audio controls autoPlay loop>
+                <audio controls loop>
                     <source src={bgm} type="audio/mpeg" />
                 </audio>
             </div>
